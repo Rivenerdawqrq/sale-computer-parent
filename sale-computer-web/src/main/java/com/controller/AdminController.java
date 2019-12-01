@@ -16,7 +16,7 @@ import java.util.List;
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
-
+    //自动装配
     @Autowired
     private ComputerService computerService;
     @RequestMapping("/list")
