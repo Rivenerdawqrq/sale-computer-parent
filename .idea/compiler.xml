@@ -6,8 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="sale-computer-service" />
         <module name="sale-computer-web" />
+        <module name="sale-computer-service" />
         <module name="sale-computer-dao" />
         <module name="sale-computer-entity" />
       </profile>

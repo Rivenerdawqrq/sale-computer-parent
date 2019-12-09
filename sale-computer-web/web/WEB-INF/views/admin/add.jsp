@@ -9,11 +9,12 @@
 <html>
 <head>
     <title>添加商品</title>
-    <link rel="stylesheet" href="/static/layui/layui.css"/>
+    <link rel="stylesheet" href="/static/;/layui.css"/>
 </head>
 <body>
-<form class="layui-form" action="">
-
+<form class="layui-form" action="/admin/insert">
+    <input name="computerName" required="required">${computerName}<!---->
+    <input name="computerPrice" required="required">
 </form>
 </body>
 </html>

@@ -22,7 +22,6 @@ import java.util.Properties;
 @ComponentScan("com.service")
 @MapperScan("com.dao")
 @PropertySource("classpath:db.properties")
-
 public class AppConfig {
     @Value("${jdbc.username}")
     private String username;

@@ -7,7 +7,7 @@
     <select id="getAll" resultType="com.entity.ComputerInfo">
         select computer_id,computer_name,computer_price,
           computer_amount,computer_state,computer_brand_id,computer_image,
-          cpu_type,gpu_type,ram_type from computer_info
+          cpu_type,gpu_type,ram_type from computer_info order by computer_id
     </select>
 
         <!--添加商品-->
@@ -19,4 +19,15 @@
     </insert>
 
 
+    <!--根据电脑牌子来查询-->
+
+    <select id="getComputerByBrand" resultType="com.entity.ComputerInfo">
+        select computer_id, computer_name, computer_price, computer_amount, computer_state, computer_brand_id, computer_image, cpu_type, gpu_type, ram_type from computer_info
+        where computer_brand_id = #{bid}
+    </select>
+
+    <!--查询所有电脑牌子-->
+    <select id="getAllBrand" resultType="com.entity.ComputerBrand">
+        select brand_id, brand_name from computer_brand_info
+    </select>
 </mapper>

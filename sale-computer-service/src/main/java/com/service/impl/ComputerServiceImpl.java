@@ -1,6 +1,7 @@
 package com.service.impl;
 
 import com.dao.ComputerDao;
+import com.entity.ComputerBrand;
 import com.entity.ComputerInfo;
 import com.service.ComputerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +12,7 @@ import java.util.List;
 @Slf4j
 public class ComputerServiceImpl implements ComputerService {
 
-    @Autowired
+    @Autowired(required = false)
     private ComputerDao dao;
     @Override
     public List<ComputerInfo> getAll(int pageNum, int pageSize) {
@@ -22,4 +23,16 @@ public class ComputerServiceImpl implements ComputerService {
     public void insert(ComputerInfo c) {
         dao.insert(c);
     }
+
+    @Override
+    public List<ComputerInfo> getComputerByBrand(int pageNum, int pageSize, int bid) {
+        return dao.getComputerByBrand(pageNum,pageSize,bid);
+    }
+
+    @Override
+    public List<ComputerBrand> getAllBrand() {
+        return dao.getAllBrand();
+    }
+
+
 }
