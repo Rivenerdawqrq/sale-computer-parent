@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.admin.AdminHomeDao">
+
+    <select id="getAll" resultType="com.entity.ComputerInfo">
+        select computer_id,computer_name,computer_price,
+          computer_amount,computer_state,computer_brand_id,computer_image,
+          cpu_type,gpu_type,ram_type from computer_info order by computer_id
+    </select>
+
+        <!--添加商品-->
+    <insert id="insert">
+        insert into computer_info(computer_name,computer_price,computer_amount
+        ,computer_state,computer_brand_id,computer_image,cpu_type,gpu_type,ram_type)
+        values (#{computerName},#{computerPrice},#{computerAmount},#{computerState}
+        ,#{computerBrandId},#{computerImage},#{cpuType},#{gpuType},#{ramType})
+    </insert>
+
+
+    <!--根据电脑牌子来查询-->
+
+    <select id="getComputerByBrand" resultType="com.entity.ComputerInfo">
+        select computer_id, computer_name, computer_price, computer_amount, computer_state, computer_brand_id, computer_image, cpu_type, gpu_type, ram_type from computer_info
+        where computer_brand_id = #{bid}
+    </select>
+
+    <!--查询所有电脑牌子-->
+    <select id="getAllBrand" resultType="com.entity.ComputerBrand">
+        select brand_id, brand_name, brand_image from computer_brand
+    </select>
+
+    <!--根据编号查询图片-->
+    <select id="getImage" resultType="string">
+        select computer_image from computer_info where computer_id = #{id}
+    </select>
+
+    <!--根据编号查询电脑-->
+    <select id="getComputerById" resultType="com.entity.ComputerInfo">
+        select computer_id, computer_name, computer_price, computer_amount, computer_state, computer_brand_id,
+        computer_image, cpu_type, gpu_type, ram_type from computer_info where computer_id = #{id}
+    </select>
+
+    <delete id="delete">
+        delete from computer_info where computer_id = #{id}
+    </delete>
+
+    <update id="update">
+        update computer_info
+
+            <set>
+                <if test="computerName != null">
+                    computer_name = #{computerName},
+                </if>
+                <if test="computerPrice != null">
+                    computer_price = #{computerPrice},
+                </if>
+                <if test="computerAmount != null">
+                    computer_amount = #{computerAmount},
+                </if>
+                <if test="computerState != null">
+                    computer_state = #{computerState},
+                </if>
+                <if test="computerBrandId != null">
+                    computer_brand_id = #{computerBrandId},
+                </if>
+                <if test="computerImage != null">
+                    computer_image = #{computerImage},
+                </if>
+                <if test="cpuType != null">
+                    cpu_type = #{cpuType},
+                </if>
+                <if test="gpuType != null">
+                    gpu_type = #{gpuType},
+                </if>
+                <if test="ramType != null">
+                    ram_type = #{ramType}
+                </if>
+            </set>
+            where computer_id = #{computerId}
+    </update>
+</mapper>

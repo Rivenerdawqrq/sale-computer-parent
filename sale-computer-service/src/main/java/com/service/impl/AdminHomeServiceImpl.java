@@ -1,27 +1,26 @@
 package com.service.impl;
 
-import com.dao.ComputerDao;
+import com.dao.admin.AdminHomeDao;
 import com.entity.ComputerBrand;
 import com.entity.ComputerInfo;
-import com.service.ComputerService;
+import com.service.AdminHomeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import lombok.extern.slf4j.Slf4j;
 import java.util.List;
 @Service
-@Slf4j
-public class ComputerServiceImpl implements ComputerService {
+public class AdminHomeServiceImpl implements AdminHomeService {
 
     @Autowired(required = false)
-    private ComputerDao dao;
+    private AdminHomeDao dao;
     @Override
     public List<ComputerInfo> getAll(int pageNum, int pageSize) {
         return dao.getAll(pageNum, pageSize);
     }
 
     @Override
-    public void insert(ComputerInfo c) {
-        dao.insert(c);
+    public void insert(ComputerInfo computerInfo) {
+        dao.insert(computerInfo);
     }
 
     @Override
@@ -32,6 +31,27 @@ public class ComputerServiceImpl implements ComputerService {
     @Override
     public List<ComputerBrand> getAllBrand() {
         return dao.getAllBrand();
+    }
+
+    @Override
+    public String getImage(int id) {
+        return dao.getImage(id);
+    }
+
+
+    @Override
+    public ComputerInfo getComputerById(int id) {
+        return dao.getComputerById(id);
+    }
+
+    @Override
+    public void delete(int id) {
+        dao.delete(id);
+    }
+
+    @Override
+    public void update(ComputerInfo computerInfo) {
+        dao.update(computerInfo);
     }
 
 

@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.format.FormatterRegistry;
 import org.springframework.format.datetime.DateFormatter;
 import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.config.annotation.*;
 
 import java.util.List;
@@ -33,4 +34,6 @@ public class MvcConfig implements WebMvcConfigurer {
         resourceHandlerRegistration.addResourceLocations("classpath:/static/");
 
     }
+
+
 }

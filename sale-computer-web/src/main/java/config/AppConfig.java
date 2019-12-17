@@ -14,6 +14,8 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.multipart.commons.CommonsFileUploadSupport;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 import javax.sql.DataSource;
 import java.util.Properties;
@@ -50,9 +52,14 @@ public class AppConfig {
                 new PathMatchingResourcePatternResolver();
         Resource[] resources = resourcePatternResolver.getResources("classpath:mappers/**/*.xml");
         factoryBean.setMapperLocations(resources);
-
         factoryBean.setConfiguration(getConfiguration());
         return factoryBean.getObject();
+    }
+    @Bean
+    public CommonsMultipartResolver multipartResolver(){
+        CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver();
+        multipartResolver.setMaxUploadSize(2000000);//设置上传文件大小  单位字节
+        return multipartResolver;
     }
 
     private org.apache.ibatis.session.Configuration getConfiguration(){

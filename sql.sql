@@ -1,8 +1,11 @@
 
-create table computer_brand_info(
+create table computer_brand(
     brand_id int primary key auto_increment,
     brand_name varchar(30) not null
+    brand_image varchar(30) not null
 );
+
+drop table computer_brand_info
 
 create table  computer_info(
     computer_id int primary key auto_increment,
@@ -16,19 +19,19 @@ create table  computer_info(
     cpu_type varchar(30) not null,
     gpu_type varchar(30) not null,
     ram_type varchar(30) not null,
-    foreign key(computer_brand_id) references computer_brand_info(brand_id)
+    foreign key(computer_brand_id) references computer_brand(brand_id)
 );
 
 
 insert into computer_brand_info( brand_name)
-values ('苹果'),('小米'),('联想'),('惠普'),('三星'),('戴尔'),('华为');
+values ('苹果'),('小米'),('联想'),('惠普'),('华为');
 
 insert into computer_info(computer_name, computer_price, computer_amount, computer_state, computer_brand_id,computer_image, cpu_type, gpu_type, ram_type)
-values ('Apple MacBook Air 13.3',6309.00,100,1,1,'apple','Core i5','集成显卡','8G'),
-       ('Apple 2019款 MacBook Pro 13.3',10619.00,123,1,1,'apple2019','八代i5','集成显卡','LPDDR3(8G)'),
-       ('HP ENVY13薄锐超轻薄',7699,100,1,4,'HP ENVY13','Intel i7低功耗版','集成显卡','8GB'),
-       ('暗影精灵5',7299,133,1,4,'an5','Intel i7标准电压版','GTX1660Ti','8GB'),
-       ('小米Pro 2019款 15.6英寸金属轻薄',7299,133,1,2,'小米Pro 2019款 15.6英寸金属轻薄','酷睿i7-8550U','MX250 2G独显','16GB'),
-       ('小米游戏本 2019款 15.6英寸',8599,155,1,2,'小米Pro 2019款 15.6英寸','Intel i7标准电压版','GTX1660Ti','16GB'),
-       ('华为MateBook 13',6099,150,1,5,'huawei1','Intel i7低功耗版','MX250','8GB'),
-       ('华为笔记本MateBook X Pro',8699,100,1,5,'huawei2','Intel i5低功耗版','MX250','8GB')
+values ('Apple MacBook Air 13.3',6309.00,100,1,1,'apple.png','Core i5','集成显卡','8G'),
+       ('Apple 2019款 MacBook Pro 13.3',10619.00,123,1,1,'apple2019.png','八代i5','集成显卡','LPDDR3(8G)'),
+       ('HP ENVY13薄锐超轻薄',7699,100,1,4,'HP13.png','Intel i7低功耗版','集成显卡','8GB'),
+       ('暗影精灵5',7299,133,1,4,'an5.png','Intel i7标准电压版','GTX1660Ti','8GB'),
+       ('小米Pro 2019款 15.6英寸金属轻薄',7299,133,1,2,'xiaomiPro.png','酷睿i7-8550U','MX250 2G独显','16GB'),
+       ('小米游戏本 2019款 15.6英寸',8599,155,1,2,'xiaomiyouxiben.png 15.6英寸','Intel i7标准电压版','GTX1660Ti','16GB'),
+       ('华为MateBook 13',6099,150,1,5,'huawei1.png','Intel i7低功耗版','MX250','8GB'),
+       ('华为笔记本MateBook X Pro',8699,100,1,5,'huawei2.png','Intel i5低功耗版','MX250','8GB')
