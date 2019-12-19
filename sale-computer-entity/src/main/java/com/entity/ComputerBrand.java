@@ -8,7 +8,7 @@ import javax.validation.constraints.NotBlank;
 @Data
 public class ComputerBrand {
     private Integer brandId;
-    @NotBlank
+    @NotBlank(message = "不能为空哦")
     private String brandName;
     private String brandImage;
 

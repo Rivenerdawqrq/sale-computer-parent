@@ -55,6 +55,7 @@
             <span class="glyphicon glyphicon-home"></span>
             管理端
         </div>
+        
         <!-- 头部区域（可配合layui已有的水平导航） -->
         <ul class="layui-nav layui-layout-left">
             <li class="layui-nav-item"><a href="/admin/add" style="text-decoration: none;"> <span class="glyphicon glyphicon-plus-sign" style="padding-right: 5px"></span>添加商品</a></li>
@@ -62,8 +63,6 @@
             <li class="layui-nav-item"><a href="#" style="text-decoration: none;">订单管理</a></li>
             <li class="layui-nav-item">
                 <a  href="javascript:;" style="text-decoration: none">选择品牌</a>
-
-
                 <dl class="layui-nav-child" id="choose"> <!-- 二级菜单 -->
                     <c:forEach items="${brand}" var="c">
                         <dd data-id="${c.brandId}" data-name="${c.brandName}"><a  style="text-decoration: none"><img id="${c.brandName}" src="/static/image/brand/${c.brandImage}">${c.brandName}</a></dd>
@@ -148,6 +147,7 @@
         $("table").on("click",".update",edit)
     })
     function edit() {
+        if (confirm()) 
         window.location.href = "/admin/edit?id="+$(this).closest("tr").attr("data-cid")
     }
     //修改成功提示

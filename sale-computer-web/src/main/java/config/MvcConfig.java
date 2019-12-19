@@ -1,5 +1,6 @@
 package config;
 
+import com.interceptor.LoginInterceptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -35,5 +36,11 @@ public class MvcConfig implements WebMvcConfigurer {
 
     }
 
-
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        LoginInterceptor loginInterceptor = new LoginInterceptor();
+        InterceptorRegistration interceptorRegistration = registry.addInterceptor(loginInterceptor);
+        interceptorRegistration.addPathPatterns("/admin/**");
+        interceptorRegistration.excludePathPatterns("/admin/login","/static/**","/admin/checkLogin");
+    }
 }

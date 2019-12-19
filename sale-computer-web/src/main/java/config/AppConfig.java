@@ -77,4 +77,5 @@ public class AppConfig {
         pageInterceptor.setProperties(properties);
         return  pageInterceptor;
     }
+
 }

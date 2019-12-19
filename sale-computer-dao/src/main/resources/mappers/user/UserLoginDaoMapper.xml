@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.user.UserLoginDao">
+    <select id="login" resultType="com.entity.UserAccount">
+        select account_name,account_pwd,account_phone from user_account
+        <where>
+            <if test="accountName != null">
+                account_name = #{accountName} and account_pwd = #{accountPwd}
+            </if>
+            <if test="accountPhone != null">
+                or account_phone = #{accountPhone} and account_pwd = #{accountPwd}
+            </if>
+        </where>
+    </select>
+</mapper>

@@ -73,14 +73,16 @@
                 <label class="layui-form-label">价格</label>
                 <div class="layui-input-block">
                     <input type="text" name="computerPrice"
-                           value="${computerInfo.computerPrice}" required=""  onkeyup="value=value.replace(/[^\d.]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d.]/g,''))" lay-verify="required" placeholder="只能输入数字和小数点哦" autocomplete="off" class="layui-input">
+                           value="${computerInfo.computerPrice}" required=""  onkeyup="value=value.replace(/[^\d.]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d.]/g,''))"
+                           lay-verify="required" placeholder="只能输入数字和小数点哦" autocomplete="off" class="layui-input">
                     <span>${computerPrice}</span>
                 </div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">库存</label>
                 <div class="layui-input-block">
-                    <input type="text" value="${computerInfo.computerAmount}" name="computerAmount" required="" lay-verify="required" placeholder="请输入商品库存" autocomplete="off" class="layui-input">
+                    <input type="text" value="${computerInfo.computerAmount}" name="computerAmount" required="" onkeyup="value=value.replace(/[^\d.]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d.]/g,''))"
+                           lay-verify="required" placeholder="请输入商品库存" autocomplete="off" class="layui-input">
                     <span>${computerAmount}</span>
                 </div>
             </div>
@@ -103,7 +105,7 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">image</label>
                 <div class="layui-input-block">
-                    <input type="file" name="myFile">
+                    <input type="file" name="myFile" required>
                 </div>
             </div>
 
