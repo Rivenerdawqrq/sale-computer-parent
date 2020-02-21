@@ -1,26 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="sale@localhost" uuid="cba749f2-68f0-4810-b663-e784f3ff8c17">
-      <driver-ref>mysql.8</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/sale</jdbc-url>
-      <driver-properties>
-        <property name="autoReconnect" value="true" />
-        <property name="zeroDateTimeBehavior" value="CONVERT_TO_NULL" />
-        <property name="tinyInt1isBit" value="false" />
-        <property name="characterEncoding" value="utf8" />
-        <property name="characterSetResults" value="utf8" />
-        <property name="yearIsDateType" value="false" />
-      </driver-properties>
-    </data-source>
-    <data-source source="LOCAL" name="works@localhost" uuid="986575ef-c777-4045-93b0-aabee82a402f">
-      <driver-ref>mysql.8</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/works</jdbc-url>
-    </data-source>
     <data-source source="LOCAL" name="sale@localhost [2]" uuid="fa5eb932-a35a-4781-9919-216d817f04d5">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
@@ -35,13 +15,27 @@
         <property name="yearIsDateType" value="false" />
       </driver-properties>
     </data-source>
-    <data-source source="LOCAL" name="works@localhost [2]" uuid="2ebe8c99-f5f7-420c-a604-ea6313ad9592">
+    <data-source source="LOCAL" name="sale@localhost [3]" uuid="6ce995f1-2ea5-4947-8914-5010af40b4a7">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/sale</jdbc-url>
+      <driver-properties>
+        <property name="autoReconnect" value="true" />
+        <property name="zeroDateTimeBehavior" value="CONVERT_TO_NULL" />
+        <property name="tinyInt1isBit" value="false" />
+        <property name="characterEncoding" value="utf8" />
+        <property name="characterSetResults" value="utf8" />
+        <property name="yearIsDateType" value="false" />
+      </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="works@localhost" uuid="4b596f53-7110-442c-b62a-c19ca7ef6a4d">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306/works</jdbc-url>
     </data-source>
-    <data-source source="LOCAL" name="sale@localhost [3]" uuid="6ce995f1-2ea5-4947-8914-5010af40b4a7">
+    <data-source source="LOCAL" name="sale@localhost" uuid="80c888b1-ae31-4d63-9556-a9bef373aca9">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>

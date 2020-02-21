@@ -23,7 +23,7 @@ import java.util.List;
 @RequestMapping("/admin")
 public class AddBrandController {
 
-    public static final String FILE_DIRECTORY = "E:\\project\\sale-computer-parent\\sale-computer-web\\src\\main\\resources\\static\\image\\brand";
+    public static final String FILE_DIRECTORY = "D:\\learn\\project\\sale-computer-parent\\sale-computer-web\\src\\main\\resources\\static\\image\\brand";
 
     @Autowired
     private AddBrandService addBrandService;

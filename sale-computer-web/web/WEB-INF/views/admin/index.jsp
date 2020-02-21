@@ -1,4 +1,4 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%--
   Created by IntelliJ IDEA.
@@ -46,6 +46,11 @@
         .layui-logo{
             cursor: pointer;
         }
+        #pageInfo>li>a{
+            text-align: center;
+            margin: 10px;
+            border-radius: 20px;
+        }
     </style>
 </head>
 <body class="layui-layout-body">
@@ -60,7 +65,7 @@
         <ul class="layui-nav layui-layout-left">
             <li class="layui-nav-item"><a href="/admin/add" style="text-decoration: none;"> <span class="glyphicon glyphicon-plus-sign" style="padding-right: 5px"></span>添加商品</a></li>
             <li class="layui-nav-item"><a href="/admin/addBrand" style="text-decoration: none"><span class="glyphicon glyphicon-plus-sign" style="padding-right: 5px"></span>添加品牌</a></li>
-            <li class="layui-nav-item"><a href="#" style="text-decoration: none;">订单管理</a></li>
+            <li class="layui-nav-item"><a href="/admin/listOrder" id="order" style="text-decoration: none;">订单管理</a></li>
             <li class="layui-nav-item">
                 <a  href="javascript:;" style="text-decoration: none">选择品牌</a>
                 <dl class="layui-nav-child" id="choose"> <!-- 二级菜单 -->
@@ -115,8 +120,11 @@
                             </thead>
                             <tbody id="tab_body"></tbody>
                         </table>
-                        <ul id="pageInfo" class="pagination">
-                        </ul>
+                        <div style="width: 1200px; vertical-align: middle; text-align: center">
+                            <ul style="" id="pageInfo" class="pagination">
+                            </ul>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -147,7 +155,6 @@
         $("table").on("click",".update",edit)
     })
     function edit() {
-        if (confirm()) 
         window.location.href = "/admin/edit?id="+$(this).closest("tr").attr("data-cid")
     }
     //修改成功提示
@@ -185,8 +192,8 @@
                     + " <td><a  class='layui-btn layui-btn-xs update' lay-event='edit'>编辑</a>" +
                     "<a class='layui-btn layui-btn-danger layui-btn-xs del'  lay-event='del'>删除</a></td></tr>"
                 $("#tab_body").append(tab)
-                //分页功能
             })
+            //分页功能
             var data = "<li class='num' value='1'><a>首页</a></li>"+
                 "<li class='num' value='" + res.prePage + "'><a>上一页</a></li>";
             res.navigatepageNums.forEach(function (num) {
@@ -195,9 +202,9 @@
             data += "<li class='num' value='" + res.nextPage + "'><a>下一页</a></li>" +
                 "<li class='num' value='" + res.pages + "'><a>尾页</a></li>";
             $("#pageInfo").append(data)
-            //悬停1秒显示电脑图片
-            imageFours(1000)
-            //调用分页点击li事件
+            //悬停0.5秒显示电脑图片
+            imageFours(500)
+            //分页点击事件
             ddClickAll()
             //删除
             all_del()
@@ -205,6 +212,7 @@
             $("table").on("click",".update",edit)
         })
     }
+
     //注意：选项卡 依赖 element 模块，否则无法进行功能性操作
     layui.use('element', function () {
         var element = layui.element;

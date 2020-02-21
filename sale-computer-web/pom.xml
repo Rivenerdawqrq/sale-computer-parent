@@ -23,6 +23,11 @@
        </dependency>
 
        <dependency>
+           <groupId>com.aliyun</groupId>
+           <artifactId>aliyun-java-sdk-core</artifactId>
+       </dependency>
+
+       <dependency>
            <groupId>javax.servlet</groupId>
            <artifactId>javax.servlet-api</artifactId>
        </dependency>
@@ -51,6 +56,11 @@
        <dependency>
            <groupId>org.hibernate.validator</groupId>
            <artifactId>hibernate-validator</artifactId>
+       </dependency>
+
+       <dependency>
+           <groupId>com.google.code.gson</groupId>
+           <artifactId>gson</artifactId>
        </dependency>
 
        <dependency>

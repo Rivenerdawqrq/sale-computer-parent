@@ -27,6 +27,7 @@ public class ComputerInfo {
     private String gpuType;
     @NotBlank(message = "不能为空哦")
     private String ramType;
+    private Integer num;
 
     public Integer getComputerId() {
         return computerId;
@@ -106,5 +107,13 @@ public class ComputerInfo {
 
     public void setRamType(String ramType) {
         this.ramType = ramType;
+    }
+
+    public Integer getNum() {
+        return num;
+    }
+
+    public void setNum(Integer num) {
+        this.num = num;
     }
 }

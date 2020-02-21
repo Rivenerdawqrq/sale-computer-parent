@@ -15,18 +15,21 @@ import javax.servlet.http.HttpSession;
 public class UserLoginController {
     @Autowired
     private UserLoginService loginService;
-
     @ResponseBody
     @RequestMapping("/userLogin")
     //登陆
     public UserAccount index(UserAccount userAccount, HttpSession session){
         userAccount.setAccountPhone(userAccount.getAccountName());
         UserAccount userLogin = loginService.login(userAccount);
+        System.out.println("test-----"+userLogin.getReceiptAddress());
         if (userLogin!=null){
             session.setAttribute("user",userLogin);
+            session.setAttribute("account",userLogin.getAccountName());
+            session.setAttribute("address",userLogin.getReceiptAddress());
+            session.setAttribute("phone",userLogin.getReceiptPhone());
             return userLogin;
         }
-        return null;
+        return userLogin;
     }
 
     @GetMapping("/logout")

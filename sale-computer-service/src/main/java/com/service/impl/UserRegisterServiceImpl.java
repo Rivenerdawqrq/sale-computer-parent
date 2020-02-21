@@ -14,4 +14,16 @@ public class UserRegisterServiceImpl implements UserRegisterService {
     public void userLogon(UserAccount userAccount) {
         dao.userLogon(userAccount);
     }
+
+    @Override
+    public UserAccount checkAccountName(String accountName) {
+        return dao.checkAccountName(accountName);
+    }
+
+    @Override
+    public UserAccount checkAccountPhone(String accountPhone) {
+        return dao.checkAccountPhone(accountPhone);
+    }
+
+
 }

@@ -26,7 +26,7 @@ import java.util.List;
 @Controller
 @RequestMapping("/admin")
 public class HomeController {
-    public static final String FILE_DIRECTORY = "E:\\project\\sale-computer-parent\\sale-computer-web\\src\\main\\resources\\static\\image";
+    public static final String FILE_DIRECTORY = "D:\\learn\\project\\sale-computer-parent\\sale-computer-web\\src\\main\\resources\\static\\image";
     @Autowired
     private AdminHomeService computerService;
     @RequestMapping("/home")
@@ -115,7 +115,7 @@ public class HomeController {
 
 
     //修改
-    //把原本的数据穿到edit页面
+    //把原本的数据传到edit页面
     @RequestMapping("/edit")
     public ModelAndView edit(int id){
         ModelAndView modelAndView = new ModelAndView();

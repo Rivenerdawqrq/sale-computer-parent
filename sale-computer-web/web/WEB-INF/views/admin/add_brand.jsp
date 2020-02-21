@@ -62,11 +62,10 @@
                 <h2 style="color: #E7E7E7; margin: 20px 40px;">添加品牌：</h2>
                 <label class="layui-form-label">名字</label>
                 <div class="layui-input-block">
-                    <input type="text" value="${computerBrand.brandName}" name="brandName"  placeholder="请输入品牌名字" autocomplete="off" class="layui-input layui-form-danger">
+                    <input type="text"  required name="brandName"  placeholder="请输入品牌名字" autocomplete="off" class="layui-input layui-form-danger">
                     <span>${brandName}</span>
                 </div>
             </div>
-
 
             <div class="layui-form-item">
                 <label class="layui-form-label">image</label>

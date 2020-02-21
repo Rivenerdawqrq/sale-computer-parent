@@ -30,6 +30,7 @@ create table  computer_info(
 );
 
 
+
 insert into computer_info(computer_name, computer_price, computer_amount, computer_state, computer_brand_id,computer_image, cpu_type, gpu_type, ram_type)
 values ('Apple MacBook Air 13.3',6309.00,100,1,1,'apple.png','Core i5','集成显卡','8G'),
        ('Apple 2019款 MacBook Pro 13.3',10619.00,123,1,1,'apple2019.png','八代i5','集成显卡','LPDDR3(8G)'),
@@ -46,8 +47,15 @@ values ('Apple MacBook Air 13.3',6309.00,100,1,1,'apple.png','Core i5','集成�
        ('联想(Lenovo)330C',4200.00,333,1,3,'Snipaste_2019-12-17_20-13-20.png','i5-8250U','独显MX110','4GB'),
        ('联想ThinkPad 翼490',5799.00,100,1,3,'Snipaste_2019-12-17_20-35-02.png','i5-8265U','2G独显 FHD','8GB'),
        ('联想（Lenovo）小新Air',4399.00,300,1,3,'Snipaste_2019-12-17_20-36-30.png','R7-2700U','AMD R7','8GB'),
-       ('Apple 2019新品 MacBook Pro 16',22199.00,322.1,3,'Snipaste_2019-12-17_20-49-17.png','九代八核i9','Radeon Pro 5500M','16GB'),
-       ('ROG 魔霸3',10999,1334,8,'')
+       ('Apple 2019新品 MacBook Pro 16',22199.00,322,1,3,'Snipaste_2019-12-17_20-49-17.png','九代八核i9','Radeon Pro 5500M','16GB'),
+        ('ALIENWARE 19新款M15R2 (美版)',20300.00,2333,1,7,'Snipaste_2020-01-21_19-04-26.png','i7-9750','RTX2060','16GB'),
+        ('Alienware m17R2 R5 a51m',8699,2332,1,7,'Snipaste_2020-01-21_19-28-16.png','Intel i7标准电压版','GTX1050Ti','8GB'),
+       ('Alienware m17R2 R5 a51m（超薄款红银颜色）',12799,1442,1,7,'Snipaste_2020-01-21_19-49-21.png','Intel i7标准电压版','RTX2060','8GB'),
+       ('RedmiBook 14 锐龙版 全金属超轻薄',3289,1234,1,2,'Snipaste_2020-01-21_19-56-27.png','锐龙 5','集成显卡','8GB'),
+       ('小米 Ruby 15.6英寸金属轻薄笔记本电脑',3889,2457,1,2,'Snipaste_2020-01-21_20-18-21.png','Intel i5低功耗版','GDDR5独显 FHD','8GB'),
+       ('小米 Air 轻薄笔记本电脑办公笔记本',3688,5675,1,2,'Snipaste_2020-01-21_20-25-24.png','Intel CoreM','集成显卡','4GB'),
+        ('联想ThinkPad 翼480',4799,6566,1,3,'Snipaste_2020-01-21_20-29-14.png','英特尔酷睿i5','RX550 2GB GDDR5 独立显存','8GB'),
+       ('联想(Lenovo) S550',4299,2355,1,3,'Snipaste_2020-01-21_20-32-23.png','AMD 四核处理器','集成显卡','12GB');
 /**
 管理员
  */
@@ -63,6 +71,23 @@ create table user_account(
     user_id  int primary key auto_increment,
     account_name varchar(11) not null,
     account_pwd varchar(16) not null,
-    account_phone varchar(11) not null
+    account_phone varchar(11) not null,
+    receipt_phone varchar(11),
+    receipt_address varchar(50)
 );
+/*
+    订单表
+*/
+create table order_info(
+    order_id int primary key,
+    account_name varchar(11),
+    computer_id int,
+    order_date date,
+    price decimal,
+    num int,
+    phone varchar(11),
+    address varchar(50),
+    state int,--1为发货，0为未发货
+)
+
 

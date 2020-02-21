@@ -14,6 +14,8 @@ public class UserAccount {
     private String accountPwd;
     @Size(max = 11,min = 11,message = "请输入正确的手机号码")
     private String accountPhone;
+    private String receiptPhone;
+    private String receiptAddress;
 
     public int getUserId() {
         return userId;
@@ -45,5 +47,21 @@ public class UserAccount {
 
     public void setAccountPhone(String accountPhone) {
         this.accountPhone = accountPhone;
+    }
+
+    public String getReceiptPhone() {
+        return receiptPhone;
+    }
+
+    public void setReceiptPhone(String receiptPhone) {
+        this.receiptPhone = receiptPhone;
+    }
+
+    public String getReceiptAddress() {
+        return receiptAddress;
+    }
+
+    public void setReceiptAddress(String receiptAddress) {
+        this.receiptAddress = receiptAddress;
     }
 }

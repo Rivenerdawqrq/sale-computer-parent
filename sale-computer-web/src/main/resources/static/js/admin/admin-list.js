@@ -2,7 +2,7 @@
 
 
 
-//悬停0.8秒显示图片
+//悬停多少秒显示图片
 function imageFours(timeout){
     var seed;
     var img = $("#image");
@@ -30,10 +30,6 @@ function imageFours(timeout){
     })
 }
 
-function this_text() {
-    var text = $(".layui-nav-child dd").html();
-    $(".layui-this").html(text)
-}
 //回到首页
 function backIndex() {
     $(".layui-logo").click(function () {
@@ -82,7 +78,8 @@ function byBrand(pageNum) {
                 "<li class='pages' value='" + res.pages + "'><a>尾页</a></li>";
             $("#pageInfo").append(data)
             ddClickByBrand()
-            imageFours(1000)
+            //悬停0.5秒显示电脑图片
+            imageFours(500)
             byBrand_del()
 
         })
@@ -130,7 +127,7 @@ function byBrandPage(pageNum){
             "<li class='pages' value='" + res.pages + "'><a>尾页</a></li>";
         $("#pageInfo").append(data)
         ddClickByBrand()
-       byBrand_del()
+        byBrand_del()
 
     })
 }
@@ -142,8 +139,8 @@ function ddClickByBrand() {
         pageNum = $(this).val();
         byBrandPage(pageNum)
     })
-    //悬停1秒显示电脑图片
-    imageFours(1000)
+    //悬停0.5秒显示电脑图片
+    // imageFours(500)
 }
 //全部数据页面的删除方法
 function all_del() {
@@ -180,11 +177,11 @@ function byBrand_del() {
     })
 }
 
-//全部商品的分页点击事件与删除点击事件
+//全部商品的分页点击事件
 function ddClickAll() {
     var  pageNum=null
     $(".num").click(function () {
-         pageNum = $(this).val();
+        pageNum = $(this).val();
         all(pageNum)
     })
 

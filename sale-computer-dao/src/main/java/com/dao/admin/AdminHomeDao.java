@@ -19,7 +19,7 @@ public interface AdminHomeDao {
     String getImage(@Param("id") int id);
     //根据编号查询电脑
     ComputerInfo getComputerById(int id);
-    //根据编号来删除
+    //根据编号来删\除
     void delete(int id);
 
     void update(ComputerInfo computerInfo);
