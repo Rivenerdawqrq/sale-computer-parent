@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.computer.ComputerCartDao">
+    <select id="checkExist" resultType="com.entity.ComputerCart">
+        select id,account_name,computer_id,num from cart where computer_id=#{id}
+    </select>
+
+    <insert id="addToCart">
+        insert into cart(account_name,computer_id,num)
+        values(#{accountName},#{computerId},#{num})
+    </insert>
+
+    <update id="addOne">
+        update cart
+        set num = num+1 where computer_id=#{computerId}
+    </update>
+
+    <select id="listCart" resultType="com.entity.ComputerInfo">
+        select a.computer_id,a.computer_name,a.computer_price,a.computer_image,b.num
+        from computer_info a inner join cart b
+        on a.computer_id=b.computer_id where b.account_name = #{accountName}
+    </select>
+
+    <delete id="remove">
+        delete from cart where computer_id = #{goodsId}
+    </delete>
+</mapper>

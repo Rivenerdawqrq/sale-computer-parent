@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.user.UserRegisterDao">
+    <insert id="userLogon">
+        insert into user_account(account_name, account_pwd, account_phone)
+        values (#{accountName},#{accountPwd},#{accountPhone})
+    </insert>
+
+    <select id="checkAccountName" resultType="com.entity.UserAccount">
+        select user_id, account_name, account_pwd, account_phone from user_account
+        where account_name = #{accountName}
+    </select>
+
+    <select id="checkAccountPhone" resultType="com.entity.UserAccount">
+        select user_id, account_name, account_pwd, account_phone from user_account
+        where account_phone = #{accountPhone}
+    </select>
+</mapper>
